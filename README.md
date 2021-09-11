@@ -37,7 +37,7 @@ Writing codes with strong object makes your codes faster, but non-extensible.
 
 ### example
 codes with abstract objects
-```
+```C
 #incldue "LinearC.h"
 
 void main()
@@ -63,7 +63,7 @@ void main()
 ```
 
 codes with strong type objects
-```
+```C
 #incldue "LinearC.h"
 
 void main()
