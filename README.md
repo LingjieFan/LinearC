@@ -40,7 +40,7 @@ but non-extensible.
 ### Comparison
 codes with abstract objects
 ```C
-#incldue "LinearC.h"
+#include "LinearC.h"
 
 void main()
 {
@@ -66,7 +66,7 @@ void main()
 
 codes with strong type objects
 ```C
-#incldue "LinearC.h"
+#include "LinearC.h"
 
 void main()
 {
