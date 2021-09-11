@@ -22,17 +22,7 @@ Num: NumD NumDC...
 
 ---------------------------
 
-## Ing.......
-
-1. This project is buiding.
-2. Num, Vector Matrix LinearC are available.
-3. It could run on Linux and Windows.
-
 ## TODO
-
-1. test it on Windows
-
-2. complete some unreasonable cases for Matrix; those of Num, Vector have been done.
 
 3. optimize the code for speed.
 
@@ -90,12 +80,15 @@ void main()
 
     num1 = (Num *)NumD_New(1);
     num2 = (Num *)NumDC_New(2+3*I);
+    
     vector1 = (Vector *)VectorD_New(2);
     vector1 = Vector_Full(vector1, num1);
     Vector_Show(vector1);
+    
     vector2 = (Vector *)VectorDC_New(2);
     vector2 = Vector_Linspace(vector2, num1, num2);
     Vector_Show(vector2);
+    
     vector3 = (Vector *)VectorDC_New(2);
 
     num1 = Vector_Max(vector1, num1);
