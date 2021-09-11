@@ -1,90 +1,46 @@
 # LinearC
 
+## Description
+C Math Library
+
+## Software Architecture
+---------------------------
+
+LinearC
+
+---------------------------
+
+Matrix: MatrixD MatrixDC...
+
+---------------------------
+
+Vector: VectorD VectorDC...
+
+---------------------------
+
+Num: NumD NumDC...
+
+---------------------------
+
+## Ing.......
+
+1. This project is buiding.
+2. Num, Vector Matrix LinearC are available.
+3. It could run on Linux and Windows.
+
+## TODO
+
+1. test it on Windows
+
+2. complete some unreasonable cases for Matrix; those of Num, Vector have been done.
+
+3. optimize the code for speed.
+
 ## How to use?
 
-1. Use Num, Vector, Matrix separately
-```C
-#include "Num.h"
-```
-or 
-```C
-#include "Vector.h"
-```
-or 
-```C
-#include "Matrix.h"
-```
+1. #include "Num.h" or #include "Vector.h" or #include "Matrix.h"
 
-2. Use LinearC
-```C
-#include "LinearC.h"
-```
-
-## Abstract VS Strong types
-There are two types objects in LinearC:
-
-Abstract objects:
-Num, Vector, Matrix
-
-Strong types objects:
-NumD, NumDC, VectorD, VectorDC, MatrixD, MatrixDC
-
-### Abstract objects
-Writing codes with abstract object makes your codes extensible, 
-and may cost a little more time for running program.
-
-Writing codes with strong object makes your codes faster, but non-extensible.
-
-### example
-codes with abstract objects
-```
-#incldue "LinearC.h"
-
-void main()
-{
-    Num *num1;
-    Vector *vector1, *vector2, *vector3;
-    
-    num1 = (Num *)NumD_New(5);
-    vector1 = (Vector *)VectorD_New(2);
-    vector2 = (Vector *)VectorDC_New(2);
-    vector3 = (Vector *)VectorDC_New(2);
-    
-    vector1 = Vector_Full(vector1, num1);
-    vector2 = Vector_Full(vector2, num2);
-    vector3 = Vector_AddVector(vector1,vector2,vector3);
-    Vector_Show(vector3);
-    
-    Num_Del(num1);
-    Vector_Del(vector1);
-    Vector_Del(vector2);
-    Vector_Del(vector3);
-}
-```
-
-codes with strong type objects
-```
-#incldue "LinearC.h"
-
-void main()
-{
-    VectorD *vector1;
-    VectorDC *vector2, *vector3;
-    
-    vector1 = VectorD_New(2);
-    vector2 = VectorDC_New(2);
-    vector3 = VectorDC_New(2);
-    
-    vector1 = VectorD_Full(vector1, 5);
-    vector2 = VectorDC_Full2(vector2, 5);
-    vector3 = VectorD_AddVectorDC(vector1,vector2,vector3);
-    VectorDC_Show(vector3);
-    
-    VectorD_Del(vector1);
-    VectorDC_Del(vector2);
-    VectorDC_Del(vector3);
-}
-```
+2. or directly #include "LinearC.h"
 
 ## Example
 
