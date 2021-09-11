@@ -15,7 +15,7 @@ or
 #include "Matrix.h"
 ```
 
-2. Use LinearC
+2. Use LinearC directly
 ```C
 #include "LinearC.h"
 ```
