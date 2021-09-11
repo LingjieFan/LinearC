@@ -33,9 +33,11 @@ NumD, NumDC, VectorD, VectorDC, MatrixD, MatrixDC
 Writing codes with abstract object makes your codes extensible, 
 and may cost a little more time for running program.
 
-Writing codes with strong object makes your codes faster, but non-extensible.
+### Strong type objects
+Writing codes with strong object makes your codes faster, 
+but non-extensible.
 
-### example
+### Comparison
 codes with abstract objects
 ```C
 #incldue "LinearC.h"
