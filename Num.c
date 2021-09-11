@@ -1,0 +1,356 @@
+#include "Num.h"
+
+Num *Num_Del(Num *pNum)
+{
+    return (*pNum->Del)(pNum);
+}
+
+Num *_NumD_Del(Num *pNum)
+{
+    return (Num *)NumD_Del((NumD *)pNum);
+}
+
+Num *_NumDC_Del(Num *pNum)
+{
+    return (Num *)NumDC_Del((NumDC *)pNum);
+}
+
+Num *Num_AddNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    return (*pNum1->AddNum)(pNum1, pNum2, pONum);
+}
+
+Num *_NumD_AddNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_AddNumD((NumD *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_AddNumD2((NumD *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_AddNumDC2((NumD *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_AddNumDC((NumD *)pNum1, (NumDC *)pNum2,  (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *_NumDC_AddNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_AddNumD2((NumDC *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_AddNumD((NumDC *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_AddNumDC2((NumDC *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_AddNumDC((NumDC *)pNum1, (NumDC *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *Num_SubNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    return (*pNum1->SubNum)(pNum1, pNum2, pONum);
+}
+
+Num *_NumD_SubNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_SubNumD((NumD *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_SubNumD2((NumD *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_SubNumDC2((NumD *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_SubNumDC((NumD *)pNum1, (NumDC *)pNum2,  (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *_NumDC_SubNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_SubNumD2((NumDC *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_SubNumD((NumDC *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_SubNumDC2((NumDC *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_SubNumDC((NumDC *)pNum1, (NumDC *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *Num_MulNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    return (*pNum1->MulNum)(pNum1, pNum2, pONum);
+}
+
+Num *_NumD_MulNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_MulNumD((NumD *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_MulNumD2((NumD *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_MulNumDC2((NumD *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_MulNumDC((NumD *)pNum1, (NumDC *)pNum2,  (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *_NumDC_MulNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_MulNumD2((NumDC *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_MulNumD((NumDC *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_MulNumDC2((NumDC *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_MulNumDC((NumDC *)pNum1, (NumDC *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *Num_DivNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    return (*pNum1->DivNum)(pNum1, pNum2, pONum);
+}
+
+Num *_NumD_DivNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_DivNumD((NumD *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_DivNumD2((NumD *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumD_DivNumDC2((NumD *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumD_DivNumDC((NumD *)pNum1, (NumDC *)pNum2,  (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
+
+Num *_NumDC_DivNum(Num *pNum1, Num *pNum2, Num *pONum)
+{
+    switch(pNum2->type)
+    {
+        case NUMD:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_DivNumD2((NumDC *)pNum1, (NumD *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_DivNumD((NumDC *)pNum1, (NumD *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        case NUMDC:
+            switch(pONum->type)
+            {
+                case NUMD:
+                    NumDC_DivNumDC2((NumDC *)pNum1, (NumDC *)pNum2, (NumD *)pONum);
+                    break;
+                case NUMDC:
+                    NumDC_DivNumDC((NumDC *)pNum1, (NumDC *)pNum2, (NumDC *)pONum);
+                    break;
+                default:
+                    fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                        __LINE__);
+            }
+            break;
+        default:
+            fprintf(stderr, "Error: There is no such type. File: %s Func: %s Line: %d\n", __FILE__, __FUNCTION__, \
+                __LINE__);
+    }
+
+    return pONum;
+}
