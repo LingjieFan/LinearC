@@ -31,7 +31,7 @@ NumD, NumDC, VectorD, VectorDC, MatrixD, MatrixDC
 
 ### Abstract objects
 Writing codes with abstract object makes your codes extensible, 
-and may cost a little more time for running program.
+but may cost a little more time for running program.
 
 ### Strong type objects
 Writing codes with strong type object makes your codes faster, 
