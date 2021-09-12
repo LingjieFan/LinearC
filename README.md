@@ -97,7 +97,7 @@ void main()
 You can use Wrap and Unwrap to create Vector, Matrix from double *pointer or double complex *pointer.
 
 Some flexible operations could be done with LinearC
-### 1. work space
+### 1. Work space
 ```C
 void func(..., ..., double *work)
 {
@@ -112,7 +112,7 @@ void func(..., ..., double *work)
     VectorD_UnWrap(vector2);
 }
 ```
-### 2. block matrix/vector
+### 2. Block matrix/vector
 ```C
 void func()
 {
