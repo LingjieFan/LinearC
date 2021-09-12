@@ -34,15 +34,15 @@ Num, Vector, Matrix
 Strong type objects:
 NumD, NumDC, VectorD, VectorDC, MatrixD, MatrixDC
 
-### Abstract objects
+### 1.Abstract objects
 Writing codes with abstract object makes your codes extensible, 
 but may cost a little more time for running program.
 
-### Strong type objects
+### 2.Strong type objects
 Writing codes with strong type object makes your codes faster, 
 but non-extensible.
 
-### Comparison
+### 3.Comparison
 codes with abstract objects
 ```C
 #include "LinearC.h"
@@ -93,9 +93,39 @@ void main()
 }
 ```
 
+## Wrap and UnWrap
+You can use wrap and Unwrap。to create Vector, Matrix from double *pointer or double complex *pointer.
+
+Some flexible operations could be done with LinearC
+### 1. work space
+```C
+void func(..., ..., double *work)
+{
+    VectorD *vector1, *vector2;
+    
+    vector1=VectorD(work,2,1);
+    vector2=VectorD(work+2,2,1);
+    
+    .....
+    
+    VectorD_UnWrap(vector1);
+    VectorD_UnWrap(vector2);
+}
+```
+### 2. block matrix/vector
+```C
+void func()
+{
+    MatrixD *matrix, *block_matrix;
+    
+    matrix = MatrixD_New(100,100);
+    block_matrix = Matrix_Wrap(matrix->matrix, 50, 50, 50);
+}
+```
+
 ## Example
 
-#### test_Num.c
+#### 1.test_Num.c
 
 ```C
 #include "Num.h"
@@ -127,7 +157,7 @@ void main()
 }
 ```
 
-#### test_Vector.c
+#### 2.test_Vector.c
 
 ```C
 #include <stdio.h>
@@ -172,7 +202,7 @@ void main()
 }
 ```
 
-#### test_Matrix.c
+#### 3.test_Matrix.c
 
 ```C
 #include "Matrix.h"
@@ -207,6 +237,6 @@ void main()
 }
 ```
 
-## Contact Us
+## Contact us
 
 The author's email: ljfan20@fudan.edu.cn
