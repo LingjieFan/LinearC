@@ -94,7 +94,7 @@ void main()
 ```
 
 ## Wrap and UnWrap
-You can use wrap and Unwrap。to create Vector, Matrix from double *pointer or double complex *pointer.
+You can use Wrap and Unwrap to create Vector, Matrix from double *pointer or double complex *pointer.
 
 Some flexible operations could be done with LinearC
 ### 1. work space
