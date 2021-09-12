@@ -145,8 +145,9 @@ void MatrixD_Show(MatrixD *pIMatrix)
 
 MatrixD *MatrixD_Set(MatrixD *pIMatrix, double diag, double offDiag)
 {
-    register int i, j, row, col, ld;
-    double *matrix;
+    int row, col;
+    register int i, j, ld;
+    register double *matrix, *iMatrix;
 
     row = pIMatrix->size[0];
     col = pIMatrix->size[1];
@@ -155,15 +156,16 @@ MatrixD *MatrixD_Set(MatrixD *pIMatrix, double diag, double offDiag)
 
     for(i=0;i<row;i++)
     {
+        iMatrix = matrix + i * ld;
         for(j=0;j<col;j++)
         {
             if(i==j)
             {
-                *(matrix+i*col+j) = diag;
+                *(iMatrix+j) = diag;
             }
             else
             {
-                *(matrix+i*col+j) = offDiag;
+                *(iMatrix+j) = offDiag;
             }
         }
     }
@@ -178,7 +180,7 @@ MatrixD *MatrixD_Set2(MatrixD *pIMatrix, double diag, double complex offDiag)
 #endif /*_MSC_VER*/
 {
     register int i, j, row, col, ld;
-    double *matrix;
+    register double *matrix, *iMatrix;
     double tmp;
 
     row = pIMatrix->size[0];
@@ -193,15 +195,16 @@ MatrixD *MatrixD_Set2(MatrixD *pIMatrix, double diag, double complex offDiag)
 
     for(i=0;i<row;i++)
     {
+        iMatrix = matrix + i*ld;
         for(j=0;j<col;j++)
         {
             if(i==j)
             {
-                *(matrix+i*col+j) = diag;
+                *(iMatrix+j) = diag;
             }
             else
             {
-                *(matrix+i*col+j) = tmp;
+                *(iMatrix+j) = tmp;
             }
         }
     }
@@ -216,7 +219,7 @@ MatrixD *MatrixD_Set3(MatrixD *pIMatrix, double complex diag, double offDiag)
 #endif /*_MSC_VER*/
 {
     register int i, j, row, col, ld;
-    double *matrix;
+    register double *matrix, *iMatrix;
     double tmp;
 
     row = pIMatrix->size[0];
@@ -231,15 +234,16 @@ MatrixD *MatrixD_Set3(MatrixD *pIMatrix, double complex diag, double offDiag)
 
     for(i=0;i<row;i++)
     {
+        iMatrix = matrix + i*ld;
         for(j=0;j<col;j++)
         {
             if(i==j)
             {
-                *(matrix+i*col+j) = tmp;
+                *(iMatrix+j) = tmp;
             }
             else
             {
-                *(matrix+i*col+j) = offDiag;
+                *(iMatrix+j) = offDiag;
             }
         }
     }
@@ -254,7 +258,7 @@ MatrixD *MatrixD_Set4(MatrixD *pIMatrix, double complex diag, double complex off
 #endif /*_MSC_VER*/
 {
     register int i, j, row, col, ld;
-    double *matrix;
+    register double *matrix, *iMatrix;
     double tmp1, tmp2;
 
     row = pIMatrix->size[0];
@@ -274,15 +278,16 @@ MatrixD *MatrixD_Set4(MatrixD *pIMatrix, double complex diag, double complex off
 
     for(i=0;i<row;i++)
     {
+        iMatrix = matrix + i*ld;
         for(j=0;j<col;j++)
         {
             if(i==j)
             {
-                *(matrix+i*col+j) = tmp1;
+                *(iMatrix+j) = tmp1;
             }
             else
             {
-                *(matrix+i*col+j) = tmp2;
+                *(iMatrix+j) = tmp2;
             }
         }
     }
