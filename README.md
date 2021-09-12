@@ -103,8 +103,8 @@ void func(..., ..., double *work)
 {
     VectorD *vector1, *vector2;
     
-    vector1=VectorD(work,2,1);
-    vector2=VectorD(work+2,2,1);
+    vector1=VectorD_Wrap(work,2,1);
+    vector2=VectorD_Wrap(work+2,2,1);
     
     .....
     
@@ -120,6 +120,10 @@ void func()
     
     matrix = MatrixD_New(100,100);
     block_matrix = Matrix_Wrap(matrix->matrix, 50, 50, 50);
+    ...
+    
+    MatrixD_Del(matrix);
+    MatrixD_UnWrap(block_matrix);
 }
 ```
 
