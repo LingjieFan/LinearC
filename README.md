@@ -1,5 +1,10 @@
 # LinearC
 
+## Makefile
+```Makefile
+gcc -I ../LinearC main.c ../LinearC/LinearC.c -o test -lblas -llapack -lm
+```
+
 ## How to use?
 
 1. Use Num, Vector, Matrix separately
