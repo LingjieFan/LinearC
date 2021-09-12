@@ -15,30 +15,32 @@ or
 #include "Matrix.h"
 ```
 
-2. Use LinearC
+2. Use LinearC directly
 ```C
 #include "LinearC.h"
 ```
 
-## Abstract VS Strong types
-There are two types objects in LinearC:
+## Abstract VS Strong type
+There are two type objects in LinearC:
 
 Abstract objects:
 Num, Vector, Matrix
 
-Strong types objects:
+Strong type objects:
 NumD, NumDC, VectorD, VectorDC, MatrixD, MatrixDC
 
 ### Abstract objects
 Writing codes with abstract object makes your codes extensible, 
-and may cost a little more time for running program.
+but may cost a little more time for running program.
 
-Writing codes with strong object makes your codes faster, but non-extensible.
+### Strong type objects
+Writing codes with strong type object makes your codes faster, 
+but non-extensible.
 
-### example
+### Comparison
 codes with abstract objects
-```
-#incldue "LinearC.h"
+```C
+#include "LinearC.h"
 
 void main()
 {
@@ -63,8 +65,8 @@ void main()
 ```
 
 codes with strong type objects
-```
-#incldue "LinearC.h"
+```C
+#include "LinearC.h"
 
 void main()
 {
