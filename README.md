@@ -26,20 +26,20 @@ or
 ```
 
 ## Abstract VS Strong type
-There are two type objects in LinearC:
+There are two kind of objects in LinearC:
 
 Abstract objects:
 Num, Vector, Matrix
 
-Strong type objects:
+Strongly typed objects:
 NumD, NumDC, VectorD, VectorDC, MatrixD, MatrixDC
 
 ### 1.Abstract objects
 Writing codes with abstract object makes your codes extensible, 
 but may cost a little more time for running program.
 
-### 2.Strong type objects
-Writing codes with strong type object makes your codes faster, 
+### 2.Strongly typed objects
+Writing codes with strongly typed object makes your codes faster, 
 but non-extensible.
 
 ### 3.Comparison
@@ -69,7 +69,7 @@ void main()
 }
 ```
 
-codes with strong type objects
+codes with strongly typed objects
 ```C
 #include "LinearC.h"
 
