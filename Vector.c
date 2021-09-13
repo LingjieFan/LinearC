@@ -2,7 +2,12 @@
 
 Vector *Vector_Del(Vector *pIVector)
 {
-    return (*pIVector->Del)(pIVector);
+    if(pIVector != NULL)
+    {
+        return (*pIVector->Del)(pIVector);
+    }
+
+    return NULL;
 }
 
 Vector *_VectorD_Del(Vector *pIVector)
@@ -17,7 +22,12 @@ Vector *_VectorDC_Del(Vector *pIVector)
 
 Vector *Vector_UnWrap(Vector *pIVector)
 {
-    return (*pIVector->UnWrap)(pIVector);
+    if(pIVector != NULL)
+    {
+        return (*pIVector->UnWrap)(pIVector);
+    }
+
+    return NULL;
 }
 
 Vector *_VectorD_UnWrap(Vector *pIVector)

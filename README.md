@@ -119,7 +119,7 @@ void func()
     MatrixD *matrix, *block_matrix;
     
     matrix = MatrixD_New(100,100);
-    block_matrix = Matrix_Wrap(matrix->matrix, 50, 50, 50);
+    block_matrix = MatrixD_Wrap(matrix->matrix, 50, 50, 50);
     ...
     
     MatrixD_Del(matrix);

@@ -2,7 +2,10 @@
 
 Num *Num_Del(Num *pNum)
 {
-    return (*pNum->Del)(pNum);
+    if(pNum != NULL)
+    {
+        return (*pNum->Del)(pNum);
+    }
 }
 
 Num *_NumD_Del(Num *pNum)

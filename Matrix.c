@@ -2,7 +2,10 @@
 
 Matrix *Matrix_Del(Matrix *pIMatrix)
 {
-    return (*pIMatrix->Del)(pIMatrix);
+    if(pIMatrix != NULL)
+    {
+        return (*pIMatrix->Del)(pIMatrix);
+    }
 }
 
 Matrix *_MatrixD_Del(Matrix *pIMatrix)
