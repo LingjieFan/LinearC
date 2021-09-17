@@ -11,9 +11,11 @@
 #include "Blas.h"
 #include "Lapack.h"
 
+#include "Object.h"
+#include "TensorClass.h"
 #include "Num.h"
 #include "Vector.h"
-#include "MatrixType.h"
+#include "MatrixClass.h"
 #include "MatrixD.h"
 #include "MatrixDC.h"
 

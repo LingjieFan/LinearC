@@ -18,7 +18,7 @@ NumD *NumD_New(double num)
         return NULL;
     }
     pNewNumD->num = num;
-    pNewNumD->parent.type = NUMD;
+    ((Object *)pNewNumD)->type = NUMD;
     pNewNumD->parent.Del = _NumD_Del;
     pNewNumD->parent.AddNum = _NumD_AddNum;
     pNewNumD->parent.SubNum = _NumD_SubNum;

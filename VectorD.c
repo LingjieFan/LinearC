@@ -38,7 +38,7 @@ VectorD *VectorD_New(int size)
     }
     pNewVectorD->size = size;
     pNewVectorD->inc = 1;
-    pNewVectorD->parent.type = VECTORD;
+    ((Object *)pNewVectorD)->type = VECTORD;
     pNewVectorD->parent.Del = _VectorD_Del;
     pNewVectorD->parent.UnWrap = _VectorD_UnWrap;
     pNewVectorD->parent.Show = _VectorD_Show;
@@ -89,7 +89,7 @@ VectorD *VectorD_Wrap(double *work, int size, int inc)
     pNewVectorD->vector = work;
     pNewVectorD->size = size;
     pNewVectorD->inc = inc;
-    pNewVectorD->parent.type = VECTORD;
+    ((Object *)pNewVectorD)->type = VECTORD;
     pNewVectorD->parent.Del = _VectorD_Del;
     pNewVectorD->parent.UnWrap = _VectorD_UnWrap;
     pNewVectorD->parent.Show = _VectorD_Show;

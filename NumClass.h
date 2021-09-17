@@ -1,20 +1,13 @@
-#ifndef _NUMTYPE_H_
-#define _NUMTYPE_H_
+#ifndef _NUMCLASS_H_
+#define _NUMCLASS_H_
 
 typedef struct _Num Num;
 typedef struct _NumD NumD;
 typedef struct _NumDC NumDC;
 
-typedef enum _NumType
-{
-    NUMD,
-    NUMDC
-}NumType;
-
 struct _Num
 {
-    NumType type;
-
+    Tensor parent;
     Num *(*Del)(Num *pNum);
     Num *(*AddNum)(Num *pNum1, Num *pNum2, Num *pONum);
     Num *(*SubNum)(Num *pNum1, Num *pNum2, Num *pONum);
@@ -38,4 +31,4 @@ struct _NumDC
     #endif /*_MSC_VER*/
 };
 
-#endif /*_NUMTYPE_H_*/
+#endif /*_NUMCLASS_H_*/

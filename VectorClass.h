@@ -1,20 +1,15 @@
-#ifndef _VECTORTYPE_H_
-#define _VECTORTYPE_H_
+#ifndef _VECTORCLASS_H_
+#define _VECTORCLASS_H_
+
+#include "Type.h"
 
 typedef struct _Vector Vector;
 typedef struct _VectorD VectorD;
 typedef struct _VectorDC VectorDC;
 
-typedef enum _VectorType
-{
-    VECTORD,
-    VECTORDC
-}VectorType;
-
 struct _Vector
 {
-    VectorType type;
-
+    Tensor parent;
     Vector *(*Del)(Vector *pIVector);
     Vector *(*UnWrap)(Vector *pIVector);
     void (*Show)(Vector *pIVector);
@@ -53,4 +48,4 @@ struct _VectorDC
     int size;
 };
 
-#endif /*_VECTORTYPE_H_*/
+#endif /*_VECTORCLASS_H_*/

@@ -42,7 +42,7 @@ MatrixDC *MatrixDC_New(int row, int col)
     pNewMatrixDC->size[0] = row;
     pNewMatrixDC->size[1] = col;
     pNewMatrixDC->ld = col;
-    pNewMatrixDC->parent.type = MATRIXDC;
+    ((Object *)pNewMatrixDC)->type = MATRIXDC;
     pNewMatrixDC->parent.Del = _MatrixDC_Del;
     pNewMatrixDC->parent.UnWrap = _MatrixDC_UnWrap;
     pNewMatrixDC->parent.Show = _MatrixDC_Show;
@@ -99,7 +99,7 @@ MatrixDC *MatrixDC_Wrap(double complex *work, int row, int col, int ld)
     pNewMatrixDC->size[0] = row;
     pNewMatrixDC->size[1] = col;
     pNewMatrixDC->ld = ld;
-    pNewMatrixDC->parent.type = MATRIXDC;
+    ((Object *)pNewMatrixDC)->type = MATRIXDC;
     pNewMatrixDC->parent.Del = _MatrixDC_Del;
     pNewMatrixDC->parent.UnWrap = _MatrixDC_UnWrap;
     pNewMatrixDC->parent.Show = _MatrixDC_Show;

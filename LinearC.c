@@ -2,6 +2,10 @@
 
 #include "MSC_Complex.c"
 
+#include "Type.c"
+
+#include "Object.c"
+
 #include "Num.c"
 #include "NumD.c"
 #include "NumDC.c"

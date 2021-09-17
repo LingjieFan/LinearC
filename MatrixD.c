@@ -38,7 +38,7 @@ MatrixD *MatrixD_New(int row, int col)
     pNewMatrixD->size[0] = row;
     pNewMatrixD->size[1] = col;
     pNewMatrixD->ld = col;
-    pNewMatrixD->parent.type = MATRIXD;
+    ((Object *)pNewMatrixD)->type = MATRIXD;
     pNewMatrixD->parent.Del = _MatrixD_Del;
     pNewMatrixD->parent.UnWrap = _MatrixD_UnWrap;
     pNewMatrixD->parent.Show = _MatrixD_Show;
@@ -91,7 +91,7 @@ MatrixD *MatrixD_Wrap(double *work, int row, int col, int ld)
     pNewMatrixD->size[0] = row;
     pNewMatrixD->size[1] = col;
     pNewMatrixD->ld = ld;
-    pNewMatrixD->parent.type = MATRIXD;
+    ((Object *)pNewMatrixD)->type = MATRIXD;
     pNewMatrixD->parent.Del = _MatrixD_Del;
     pNewMatrixD->parent.UnWrap = _MatrixD_UnWrap;
     pNewMatrixD->parent.Show = _MatrixD_Show;

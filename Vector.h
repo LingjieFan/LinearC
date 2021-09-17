@@ -13,8 +13,10 @@
 #include "Blas.h"
 #include "Lapack.h"
 
+#include "Object.h"
+#include "TensorClass.h"
 #include "Num.h"
-#include "VectorType.h"
+#include "VectorClass.h"
 #include "VectorD.h"
 #include "VectorDC.h"
 

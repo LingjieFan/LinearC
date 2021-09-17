@@ -42,7 +42,7 @@ VectorDC *VectorDC_New(int size)
     }
     pNewVectorDC->size = size;
     pNewVectorDC->inc = 1;
-    pNewVectorDC->parent.type = VECTORDC;
+    ((Object *)pNewVectorDC)->type = VECTORDC;
     pNewVectorDC->parent.Del = _VectorDC_Del;
     pNewVectorDC->parent.UnWrap = _VectorDC_UnWrap;
     pNewVectorDC->parent.Show = _VectorDC_Show;
@@ -97,7 +97,7 @@ VectorDC *VectorDC_Wrap(double complex *work, int size, int inc)
     pNewVectorDC->vector = work;
     pNewVectorDC->size = size;
     pNewVectorDC->inc = inc;
-    pNewVectorDC->parent.type = VECTORDC;
+    ((Object *)pNewVectorDC)->type = VECTORDC;
     pNewVectorDC->parent.Del = _VectorDC_Del;
     pNewVectorDC->parent.UnWrap = _VectorDC_UnWrap;
     pNewVectorDC->parent.Show = _VectorDC_Show;

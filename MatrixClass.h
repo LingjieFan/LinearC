@@ -1,20 +1,15 @@
-#ifndef _MATRIXTYPE_H_
-#define _MATRIXTYPE_H_
+#ifndef _MATRIXCLASS_H_
+#define _MATRIXCLASS_H_
+
+#include "Type.h"
 
 typedef struct _Matrix Matrix;
 typedef struct _MatrixD MatrixD;
 typedef struct _MatrixDC MatrixDC;
 
-typedef enum _MatrixType
-{
-    MATRIXD,
-    MATRIXDC
-}MatrixType;
-
 struct _Matrix
 {
-    MatrixType type;
-
+    Tensor parent;
     Matrix *(*Del)(Matrix *pIMatrix);
     Matrix *(*UnWrap)(Matrix *pIMatrix);
     void (*Show)(Matrix *pIMatrix);
@@ -37,7 +32,6 @@ struct _Matrix
 struct _MatrixD
 {
     Matrix parent;
-
     double *matrix;
     int ld;
     int size[2];
@@ -46,7 +40,6 @@ struct _MatrixD
 struct _MatrixDC
 {
     Matrix parent;
-
     #ifdef _MSC_VER
     _Dcomplex *matrix;
     #else
@@ -56,4 +49,4 @@ struct _MatrixDC
     int size[2];
 };
 
-#endif /*_MATRIXTYPE_H_*/
+#endif /*_MATRIXCLASS_H_*/

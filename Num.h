@@ -4,10 +4,13 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+
 #include <complex.h>
 #include "MSC_Complex.h"
 
-#include "NumType.h"
+#include "Object.h"
+#include "TensorClass.h"
+#include "NumClass.h"
 #include "NumD.h"
 #include "NumDC.h"
 

@@ -22,7 +22,7 @@ NumDC *NumDC_New(double complex num)
         return NULL;
     }
     pNewNumDC->num = num;
-    pNewNumDC->parent.type = NUMDC;
+    ((Object *)pNewNumDC)->type = NUMDC;
     pNewNumDC->parent.Del = _NumDC_Del;
     pNewNumDC->parent.AddNum = _NumDC_AddNum;
     pNewNumDC->parent.SubNum = _NumDC_SubNum;
