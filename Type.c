@@ -1,24 +1,44 @@
 #include "Type.h"
 
-static Type _NUMD = {NULL};
+static Type _OBJECT = {NULL};
 
-static Type _NUMDC = {NULL};
+const Type *OBJECT = & _OBJECT;
+
+static Type _TENSOR = {&_OBJECT};
+
+const Type *TENSOR = & _TENSOR;
+
+static Type _NUM = {&_TENSOR};
+
+static Type _NUMD = {&_NUM};
+
+static Type _NUMDC = {&_NUM};
+
+const Type *NUM = & _NUM;
 
 const Type *NUMD = & _NUMD;
 
 const Type *NUMDC = & _NUMDC;
 
-static Type _VECTORD = {NULL};
+static Type _VECTOR = {&_TENSOR};
 
-static Type _VECTORDC = {NULL};
+static Type _VECTORD = {&_VECTOR};
+
+static Type _VECTORDC = {&_VECTOR};
+
+const Type *VECTOR = & _VECTOR;
 
 const Type *VECTORD = & _VECTORD;
 
 const Type *VECTORDC = & _VECTORDC;
 
-static Type _MATRIXD = {NULL};
+static Type _MATRIX = {&_TENSOR};
 
-static Type _MATRIXDC = {NULL};
+static Type _MATRIXD = {&_MATRIX};
+
+static Type _MATRIXDC = {&_MATRIX};
+
+const Type *MATRIX = & _MATRIX;
 
 const Type *MATRIXD = & _MATRIXD;
 

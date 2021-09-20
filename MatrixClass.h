@@ -10,9 +10,6 @@ typedef struct _MatrixDC MatrixDC;
 struct _Matrix
 {
     Tensor parent;
-    Matrix *(*Del)(Matrix *pIMatrix);
-    Matrix *(*UnWrap)(Matrix *pIMatrix);
-    void (*Show)(Matrix *pIMatrix);
     Matrix *(*Set)(Matrix *pIMatrix, Num *diag, Num *offDiag);
     Matrix *(*Copy)(Matrix *pIMatrix, Matrix *pOMatrix);
     Matrix *(*T)(Matrix *pIMatrix, Matrix *pOMatrix);

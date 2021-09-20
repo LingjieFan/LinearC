@@ -1,8 +1,8 @@
 #include "Vector.h"
 
-extern Vector *_VectorD_Del(Vector *pIVector);
-extern Vector *_VectorD_UnWrap(Vector *pIVector);
-extern void _VectorD_Show(Vector *pIVector);
+extern Object *_VectorD_Del(Object *pIVector);
+extern Object *_VectorD_UnWrap(Object *pIVector);
+extern void _VectorD_Show(Tensor *pIVector);
 extern Vector *_VectorD_Full(Vector *pIVector, Num *pNum);
 extern Vector *_VectorD_Linspace(Vector *pIVector, Num *start, Num *end);
 extern Vector *_VectorD_Copy(Vector *pIVector, Vector *pOVector);
@@ -39,9 +39,9 @@ VectorD *VectorD_New(int size)
     pNewVectorD->size = size;
     pNewVectorD->inc = 1;
     ((Object *)pNewVectorD)->type = VECTORD;
-    pNewVectorD->parent.Del = _VectorD_Del;
-    pNewVectorD->parent.UnWrap = _VectorD_UnWrap;
-    pNewVectorD->parent.Show = _VectorD_Show;
+    ((Object *)pNewVectorD)->Del = _VectorD_Del;
+    ((Object *)pNewVectorD)->UnWrap = _VectorD_UnWrap;
+    ((Tensor *)pNewVectorD)->Show = _VectorD_Show;
     pNewVectorD->parent.Full = _VectorD_Full;
     pNewVectorD->parent.Linspace = _VectorD_Linspace;
     pNewVectorD->parent.Copy = _VectorD_Copy;
@@ -90,9 +90,9 @@ VectorD *VectorD_Wrap(double *work, int size, int inc)
     pNewVectorD->size = size;
     pNewVectorD->inc = inc;
     ((Object *)pNewVectorD)->type = VECTORD;
-    pNewVectorD->parent.Del = _VectorD_Del;
-    pNewVectorD->parent.UnWrap = _VectorD_UnWrap;
-    pNewVectorD->parent.Show = _VectorD_Show;
+    ((Object *)pNewVectorD)->Del = _VectorD_Del;
+    ((Object *)pNewVectorD)->UnWrap = _VectorD_UnWrap;
+    ((Tensor *)pNewVectorD)->Show = _VectorD_Show;
     pNewVectorD->parent.Full = _VectorD_Full;
     pNewVectorD->parent.Linspace = _VectorD_Linspace;
     pNewVectorD->parent.Copy = _VectorD_Copy;

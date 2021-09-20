@@ -2,20 +2,47 @@
 
 Num *Num_Del(Num *pNum)
 {
-    if(pNum != NULL)
+    if(pNum == NULL)
     {
-        return (*pNum->Del)(pNum);
+        return NULL;
     }
+
+    return (Num *)(*((Object *)pNum)->Del)((Object *)pNum);
 }
 
-Num *_NumD_Del(Num *pNum)
+Object *_NumD_Del(Object *pNum)
 {
-    return (Num *)NumD_Del((NumD *)pNum);
+    return (Object *)NumD_Del((NumD *)pNum);
 }
 
-Num *_NumDC_Del(Num *pNum)
+Object *_NumDC_Del(Object *pNum)
 {
-    return (Num *)NumDC_Del((NumDC *)pNum);
+    return (Object *)NumDC_Del((NumDC *)pNum);
+}
+
+void Num_Show(Num *pNum)
+{
+    (*((Tensor *)pNum)->Show)((Tensor *)pNum);
+}
+
+void _NumD_Show(Tensor *pNum)
+{
+    NumD_Show((NumD *)pNum);
+}
+
+void _NumDC_Show(Tensor *pNum)
+{
+    NumDC_Show((NumDC *)pNum);
+}
+
+Num *Num_UnWrap(Num *pNum)
+{
+    if(pNum == NULL)
+    {
+        return NULL;
+    }
+
+    return (Num *)(*((Object *)pNum)->UnWrap)((Object *)pNum);
 }
 
 Num *Num_AddNum(Num *pNum1, Num *pNum2, Num *pONum)

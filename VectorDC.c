@@ -1,8 +1,8 @@
 #include "Vector.h"
 
-extern Vector *_VectorDC_Del(Vector *pIVector);
-extern Vector *_VectorDC_UnWrap(Vector *pIVector);
-extern void _VectorDC_Show(Vector *pIVector);
+extern Object *_VectorDC_Del(Object *pIVector);
+extern Object *_VectorDC_UnWrap(Object *pIVector);
+extern void _VectorDC_Show(Tensor *pIVector);
 extern Vector *_VectorDC_Full(Vector *pIVector, Num *pNum);
 extern Vector *_VectorDC_Linspace(Vector *pIVector, Num *start, Num *end);
 extern Vector *_VectorDC_Copy(Vector *pIVector, Vector *pOVector);
@@ -43,9 +43,9 @@ VectorDC *VectorDC_New(int size)
     pNewVectorDC->size = size;
     pNewVectorDC->inc = 1;
     ((Object *)pNewVectorDC)->type = VECTORDC;
-    pNewVectorDC->parent.Del = _VectorDC_Del;
-    pNewVectorDC->parent.UnWrap = _VectorDC_UnWrap;
-    pNewVectorDC->parent.Show = _VectorDC_Show;
+    ((Object *)pNewVectorDC)->Del = _VectorDC_Del;
+    ((Object *)pNewVectorDC)->UnWrap = _VectorDC_UnWrap;
+    ((Tensor *)pNewVectorDC)->Show = _VectorDC_Show;
     pNewVectorDC->parent.Full = _VectorDC_Full;
     pNewVectorDC->parent.Linspace = _VectorDC_Linspace;
     pNewVectorDC->parent.Copy = _VectorDC_Copy;
@@ -98,9 +98,9 @@ VectorDC *VectorDC_Wrap(double complex *work, int size, int inc)
     pNewVectorDC->size = size;
     pNewVectorDC->inc = inc;
     ((Object *)pNewVectorDC)->type = VECTORDC;
-    pNewVectorDC->parent.Del = _VectorDC_Del;
-    pNewVectorDC->parent.UnWrap = _VectorDC_UnWrap;
-    pNewVectorDC->parent.Show = _VectorDC_Show;
+    ((Object *)pNewVectorDC)->Del = _VectorDC_Del;
+    ((Object *)pNewVectorDC)->UnWrap = _VectorDC_UnWrap;
+    ((Tensor *)pNewVectorDC)->Show = _VectorDC_Show;
     pNewVectorDC->parent.Full = _VectorDC_Full;
     pNewVectorDC->parent.Linspace = _VectorDC_Linspace;
     pNewVectorDC->parent.Copy = _VectorDC_Copy;

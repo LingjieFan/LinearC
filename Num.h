@@ -16,6 +16,8 @@
 
 extern Num *Num_Del(Num *pNum);
 
+extern Num *Num_UnWrap(Num *pNum);
+
 extern Num *Num_AddNum(Num *pNum1, Num *pNum2, Num *pONum);
 
 extern Num *Num_SubNum(Num *pNum1, Num *pNum2, Num *pONum);

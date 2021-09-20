@@ -2,55 +2,55 @@
 
 Vector *Vector_Del(Vector *pIVector)
 {
-    if(pIVector != NULL)
+    if(pIVector == NULL)
     {
-        return (*pIVector->Del)(pIVector);
+        return NULL;
     }
 
-    return NULL;
+    return (Vector *)(*((Object *)pIVector)->Del)((Object *)pIVector);
 }
 
-Vector *_VectorD_Del(Vector *pIVector)
+Object *_VectorD_Del(Object *pIVector)
 {
-    return (Vector *)VectorD_Del((VectorD *)pIVector);
+    return (Object *)VectorD_Del((VectorD *)pIVector);
 }
 
-Vector *_VectorDC_Del(Vector *pIVector)
+Object *_VectorDC_Del(Object *pIVector)
 {
-    return (Vector *)VectorDC_Del((VectorDC *)pIVector);
+    return (Object *)VectorDC_Del((VectorDC *)pIVector);
 }
 
 Vector *Vector_UnWrap(Vector *pIVector)
 {
-    if(pIVector != NULL)
+    if(pIVector == NULL)
     {
-        return (*pIVector->UnWrap)(pIVector);
+        return NULL;
     }
 
-    return NULL;
+    return (Vector *)(*((Object *)pIVector)->Del)((Object *)pIVector);
 }
 
-Vector *_VectorD_UnWrap(Vector *pIVector)
+Object *_VectorD_UnWrap(Object *pIVector)
 {
-    return (Vector *)VectorD_UnWrap((VectorD *)pIVector);
+    return (Object *)VectorD_UnWrap((VectorD *)pIVector);
 }
 
-Vector *_VectorDC_UnWrap(Vector *pIVector)
+Object *_VectorDC_UnWrap(Object *pIVector)
 {
-    return (Vector *)VectorD_UnWrap((VectorD *)pIVector);
+    return (Object *)VectorDC_UnWrap((VectorDC *)pIVector);
 }
 
 void Vector_Show(Vector *pIVector)
 {
-    (*pIVector->Show)(pIVector);
+    (*((Tensor *)pIVector)->Show)((Tensor *)pIVector);
 }
 
-void _VectorD_Show(Vector *pIVector)
+void _VectorD_Show(Tensor *pIVector)
 {
     VectorD_Show((VectorD *)pIVector);
 }
 
-void _VectorDC_Show(Vector *pIVector)
+void _VectorDC_Show(Tensor *pIVector)
 {
     VectorDC_Show((VectorDC *)pIVector);
 }

@@ -11,6 +11,8 @@ extern NumDC *NumDC_New(double complex num);
 
 extern NumDC *NumDC_Del(NumDC *pNumDC);
 
+extern void NumDC_Show(NumDC *pNumDC);
+
 extern NumDC *NumDC_AddNumD(NumDC *pNumDC1, NumD *pNumD2, NumDC *pONumDC);
 
 extern NumD *NumDC_AddNumD2(NumDC *pNumDC1, NumD *pNumD2, NumD *pONumD);

@@ -1,8 +1,8 @@
 #include "Matrix.h"
 
-extern Matrix *_MatrixDC_Del(Matrix *pIMatrix);
-extern Matrix *_MatrixDC_UnWrap(Matrix *pIMatrix);
-extern void _MatrixDC_Show(Matrix *pIMatrix);
+extern Object *_MatrixDC_Del(Object *pIMatrix);
+extern Object *_MatrixDC_UnWrap(Object *pIMatrix);
+extern void _MatrixDC_Show(Tensor *pIMatrix);
 extern Matrix *_MatrixDC_Set(Matrix *pIMatrix, Num *diag, Num *offDiag);
 extern Matrix *_MatrixDC_Copy(Matrix *pIMatrix, Matrix *pOMatrix);
 extern Matrix *_MatrixDC_T(Matrix *pIMatrix, Matrix *pOMatrix);
@@ -43,9 +43,9 @@ MatrixDC *MatrixDC_New(int row, int col)
     pNewMatrixDC->size[1] = col;
     pNewMatrixDC->ld = col;
     ((Object *)pNewMatrixDC)->type = MATRIXDC;
-    pNewMatrixDC->parent.Del = _MatrixDC_Del;
-    pNewMatrixDC->parent.UnWrap = _MatrixDC_UnWrap;
-    pNewMatrixDC->parent.Show = _MatrixDC_Show;
+    ((Object *)pNewMatrixDC)->Del = _MatrixDC_Del;
+    ((Object *)pNewMatrixDC)->UnWrap = _MatrixDC_UnWrap;
+    ((Tensor *)pNewMatrixDC)->Show = _MatrixDC_Show;
     pNewMatrixDC->parent.Set = _MatrixDC_Set;
     pNewMatrixDC->parent.Copy = _MatrixDC_Copy;
     pNewMatrixDC->parent.T = _MatrixDC_T;
@@ -100,9 +100,9 @@ MatrixDC *MatrixDC_Wrap(double complex *work, int row, int col, int ld)
     pNewMatrixDC->size[1] = col;
     pNewMatrixDC->ld = ld;
     ((Object *)pNewMatrixDC)->type = MATRIXDC;
-    pNewMatrixDC->parent.Del = _MatrixDC_Del;
-    pNewMatrixDC->parent.UnWrap = _MatrixDC_UnWrap;
-    pNewMatrixDC->parent.Show = _MatrixDC_Show;
+    ((Object *)pNewMatrixDC)->Del = _MatrixDC_Del;
+    ((Object *)pNewMatrixDC)->UnWrap = _MatrixDC_UnWrap;
+    ((Tensor *)pNewMatrixDC)->Show = _MatrixDC_Show;
     pNewMatrixDC->parent.Set = _MatrixDC_Set;
     pNewMatrixDC->parent.Copy = _MatrixDC_Copy;
     pNewMatrixDC->parent.T = _MatrixDC_T;

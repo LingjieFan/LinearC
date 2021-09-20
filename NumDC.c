@@ -1,6 +1,7 @@
 #include "Num.h"
 
-extern Num *_NumDC_Del(Num *pNum);
+extern Object *_NumDC_Del(Object *pObject);
+extern void _NumDC_Show(Tensor *pTensor);
 extern Num *_NumDC_AddNum(Num *pNum1, Num *pNum2, Num *pONum);
 extern Num *_NumDC_SubNum(Num *pNum1, Num *pNum2, Num *pONum);
 extern Num *_NumDC_MulNum(Num *pNum1, Num *pNum2, Num *pONum);
@@ -23,7 +24,9 @@ NumDC *NumDC_New(double complex num)
     }
     pNewNumDC->num = num;
     ((Object *)pNewNumDC)->type = NUMDC;
-    pNewNumDC->parent.Del = _NumDC_Del;
+    ((Object *)pNewNumDC)->Del = _NumDC_Del;
+    ((Object *)pNewNumDC)->UnWrap = _NumDC_Del;
+    ((Tensor *)pNewNumDC)->Show = _NumDC_Show;
     pNewNumDC->parent.AddNum = _NumDC_AddNum;
     pNewNumDC->parent.SubNum = _NumDC_SubNum;
     pNewNumDC->parent.MulNum = _NumDC_MulNum;
@@ -40,6 +43,11 @@ NumDC *NumDC_Del(NumDC *pNumDC)
     }
 
     return NULL;
+}
+
+void NumDC_Show(NumDC *pNumDC)
+{
+    printf("NumDC_Show: \n num:%lf+%lf*j\n\n", creal(pNumDC->num),cimag(pNumDC->num));
 }
 
 NumDC *NumDC_AddNumD(NumDC *pNumDC1, NumD *pNumD2, NumDC *pONumDC)

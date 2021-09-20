@@ -1,6 +1,7 @@
 #include "Num.h"
 
-extern Num *_NumD_Del(Num *pNum);
+extern Object *_NumD_Del(Object *pNum);
+extern void _NumD_Show(Tensor *pTensor);
 extern Num *_NumD_AddNum(Num *pNum1, Num *pNum2, Num *pONum);
 extern Num *_NumD_SubNum(Num *pNum1, Num *pNum2, Num *pONum);
 extern Num *_NumD_MulNum(Num *pNum1, Num *pNum2, Num *pONum);
@@ -19,7 +20,9 @@ NumD *NumD_New(double num)
     }
     pNewNumD->num = num;
     ((Object *)pNewNumD)->type = NUMD;
-    pNewNumD->parent.Del = _NumD_Del;
+    ((Object *)pNewNumD)->Del = _NumD_Del;
+    ((Object *)pNewNumD)->UnWrap = _NumD_Del;
+    ((Tensor *)pNewNumD)->Show = _NumD_Show;
     pNewNumD->parent.AddNum = _NumD_AddNum;
     pNewNumD->parent.SubNum = _NumD_SubNum;
     pNewNumD->parent.MulNum = _NumD_MulNum;
@@ -36,6 +39,11 @@ NumD *NumD_Del(NumD *pNumD)
     }
 
     return NULL;
+}
+
+void NumD_Show(NumD *pNumD)
+{
+    printf("NumD_Show: \n num:%lf\n\n", pNumD->num);
 }
 
 NumD *NumD_AddNumD(NumD *pNumD1, NumD *pNumD2, NumD *pONumD)

@@ -2,48 +2,55 @@
 
 Matrix *Matrix_Del(Matrix *pIMatrix)
 {
-    if(pIMatrix != NULL)
+    if(pIMatrix == NULL)
     {
-        return (*pIMatrix->Del)(pIMatrix);
+        return NULL;
     }
+
+    return (Matrix *)(*((Object *)pIMatrix)->Del)((Object *)pIMatrix);
 }
 
-Matrix *_MatrixD_Del(Matrix *pIMatrix)
+Object *_MatrixD_Del(Object *pIMatrix)
 {
-    return (Matrix *)MatrixD_Del((MatrixD *)pIMatrix);
+    return (Object *)MatrixD_Del((MatrixD *)pIMatrix);
 }
 
-Matrix *_MatrixDC_Del(Matrix *pIMatrix)
+Object *_MatrixDC_Del(Object *pIMatrix)
 {
-    return (Matrix *)MatrixDC_Del((MatrixDC *)pIMatrix);
+    return (Object *)MatrixDC_Del((MatrixDC *)pIMatrix);
 }
 
 Matrix *Matrix_UnWrap(Matrix *pIMatrix)
 {
-    return (*pIMatrix->UnWrap)(pIMatrix);
+    if(pIMatrix == NULL)
+    {
+        return NULL;
+    }
+
+    return (Matrix *)(*((Object *)pIMatrix)->Del)((Object *)pIMatrix);
 }
 
-Matrix *_MatrixD_UnWrap(Matrix *pIMatrix)
+Object *_MatrixD_UnWrap(Object *pIMatrix)
 {
-    return (Matrix *)MatrixD_UnWrap((MatrixD *)pIMatrix);
+    return (Object *)MatrixD_UnWrap((MatrixD *)pIMatrix);
 }
 
-Matrix *_MatrixDC_UnWrap(Matrix *pIMatrix)
+Object *_MatrixDC_UnWrap(Object *pIMatrix)
 {
-    return (Matrix *)MatrixDC_UnWrap((MatrixDC *)pIMatrix);
+    return (Object *)MatrixDC_UnWrap((MatrixDC *)pIMatrix);
 }
 
 void Matrix_Show(Matrix *pIMatrix)
 {
-    (*pIMatrix->Show)(pIMatrix);
+    (*((Tensor *)pIMatrix)->Show)((Tensor *)pIMatrix);
 }
 
-void _MatrixD_Show(Matrix *pIMatrix)
+void _MatrixD_Show(Tensor *pIMatrix)
 {
     MatrixD_Show((MatrixD *)pIMatrix);
 }
 
-void _MatrixDC_Show(Matrix *pIMatrix)
+void _MatrixDC_Show(Tensor *pIMatrix)
 {
     MatrixDC_Show((MatrixDC *)pIMatrix);
 }

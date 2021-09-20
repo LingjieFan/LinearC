@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="859d9057-6214-4996-9c77-022a91b63153" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MatrixClass.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NumClass.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Object.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Object.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ObjectClass.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TensorClass.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Type.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Type.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VectorClass.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LinearC.c" beforeDir="false" afterPath="$PROJECT_DIR$/LinearC.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MatrixD.c" beforeDir="false" afterPath="$PROJECT_DIR$/MatrixD.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MatrixDC.c" beforeDir="false" afterPath="$PROJECT_DIR$/MatrixDC.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MatrixType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Num.c" beforeDir="false" afterPath="$PROJECT_DIR$/Num.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Num.h" beforeDir="false" afterPath="$PROJECT_DIR$/Num.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NumD.c" beforeDir="false" afterPath="$PROJECT_DIR$/NumD.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NumDC.c" beforeDir="false" afterPath="$PROJECT_DIR$/NumDC.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NumType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vector.c" beforeDir="false" afterPath="$PROJECT_DIR$/Vector.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/Vector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VectorD.c" beforeDir="false" afterPath="$PROJECT_DIR$/VectorD.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VectorDC.c" beforeDir="false" afterPath="$PROJECT_DIR$/VectorDC.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VectorType.h" beforeDir="false" />
-    </list>
+    <list default="true" id="859d9057-6214-4996-9c77-022a91b63153" name="Changes" comment="Object-oriented (#4)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +31,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../LinearC_V3" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631529100933</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Object-oriented (#4)">
+      <created>1631863603751</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631863603751</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +113,7 @@
     <MESSAGE value="Add Macro_Math (#1)" />
     <MESSAGE value="Optim MatrixD_Set (#2)" />
     <MESSAGE value="Del NULL (#3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Del NULL (#3)" />
+    <MESSAGE value="Object-oriented (#4)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Object-oriented (#4)" />
   </component>
 </project>

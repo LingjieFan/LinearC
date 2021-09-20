@@ -7,6 +7,8 @@ extern NumD *NumD_New(double num);
 
 extern NumD *NumD_Del(NumD *pNumD);
 
+extern void NumD_Show(NumD *pNumD);
+
 extern NumD *NumD_AddNumD(NumD *pNumD1, NumD *pNumD2, NumD *pONumD);
 
 extern NumDC *NumD_AddNumD2(NumD *pNumD1, NumD *pNumD2, NumDC *pONumDC);

@@ -10,9 +10,6 @@ typedef struct _VectorDC VectorDC;
 struct _Vector
 {
     Tensor parent;
-    Vector *(*Del)(Vector *pIVector);
-    Vector *(*UnWrap)(Vector *pIVector);
-    void (*Show)(Vector *pIVector);
     Vector *(*Full)(Vector *pIVector, Num *pNum);
     Vector *(*Linspace)(Vector *pIVector, Num *start, Num *end);
     Vector *(*Copy)(Vector *pIVector, Vector *pOVector);

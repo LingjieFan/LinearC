@@ -8,7 +8,6 @@ typedef struct _NumDC NumDC;
 struct _Num
 {
     Tensor parent;
-    Num *(*Del)(Num *pNum);
     Num *(*AddNum)(Num *pNum1, Num *pNum2, Num *pONum);
     Num *(*SubNum)(Num *pNum1, Num *pNum2, Num *pONum);
     Num *(*MulNum)(Num *pNum1, Num *pNum2, Num *pONum);

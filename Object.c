@@ -19,8 +19,26 @@ int instanceof(void *object, const Type *type)
         {
             return 1;
         }
-        _type = type->super;
+        _type = _type->super;
     }
 
     return 0;
+}
+
+Object *Object_Del(Object *pObject)
+{
+    if(pObject == NULL)
+    {
+        return NULL;
+    }
+    return (*pObject->Del)(pObject);
+}
+
+Object *Object_UnWrap(Object *pObject)
+{
+    if(pObject == NULL)
+    {
+        return NULL;
+    }
+    return (*pObject->UnWrap)(pObject);
 }

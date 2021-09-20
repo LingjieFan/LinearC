@@ -1,8 +1,8 @@
 #include "Matrix.h"
 
-extern Matrix *_MatrixD_Del(Matrix *pIMatrix);
-extern Matrix *_MatrixD_UnWrap(Matrix *pIMatrix);
-extern void _MatrixD_Show(Matrix *pIMatrix);
+extern Object *_MatrixD_Del(Object *pIMatrix);
+extern Object *_MatrixD_UnWrap(Object *pIMatrix);
+extern void _MatrixD_Show(Tensor *pIMatrix);
 extern Matrix *_MatrixD_Set(Matrix *pIMatrix, Num *diag, Num *offDiag);
 extern Matrix *_MatrixD_Copy(Matrix *pIMatrix, Matrix *pOMatrix);
 extern Matrix *_MatrixD_T(Matrix *pIMatrix, Matrix *pOMatrix);
@@ -39,9 +39,9 @@ MatrixD *MatrixD_New(int row, int col)
     pNewMatrixD->size[1] = col;
     pNewMatrixD->ld = col;
     ((Object *)pNewMatrixD)->type = MATRIXD;
-    pNewMatrixD->parent.Del = _MatrixD_Del;
-    pNewMatrixD->parent.UnWrap = _MatrixD_UnWrap;
-    pNewMatrixD->parent.Show = _MatrixD_Show;
+    ((Object *)pNewMatrixD)->Del = _MatrixD_Del;
+    ((Object *)pNewMatrixD)->UnWrap = _MatrixD_UnWrap;
+    ((Tensor *)pNewMatrixD)->Show = _MatrixD_Show;
     pNewMatrixD->parent.Set = _MatrixD_Set;
     pNewMatrixD->parent.Copy = _MatrixD_Copy;
     pNewMatrixD->parent.T = _MatrixD_T;
@@ -92,9 +92,9 @@ MatrixD *MatrixD_Wrap(double *work, int row, int col, int ld)
     pNewMatrixD->size[1] = col;
     pNewMatrixD->ld = ld;
     ((Object *)pNewMatrixD)->type = MATRIXD;
-    pNewMatrixD->parent.Del = _MatrixD_Del;
-    pNewMatrixD->parent.UnWrap = _MatrixD_UnWrap;
-    pNewMatrixD->parent.Show = _MatrixD_Show;
+    ((Object *)pNewMatrixD)->Del = _MatrixD_Del;
+    ((Object *)pNewMatrixD)->UnWrap = _MatrixD_UnWrap;
+    ((Tensor *)pNewMatrixD)->Show = _MatrixD_Show;
     pNewMatrixD->parent.Set = _MatrixD_Set;
     pNewMatrixD->parent.Copy = _MatrixD_Copy;
     pNewMatrixD->parent.T = _MatrixD_T;

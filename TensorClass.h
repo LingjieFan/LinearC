@@ -8,6 +8,7 @@ typedef struct _Tensor Tensor;
 struct _Tensor
 {
     Object parent;
+    void (*Show)(Tensor *pTensor);
 };
 
 #endif /*_TENSOR_H_*/
